@@ -46,14 +46,23 @@ end
 
 # Hashes #add_knight(name, quest, favorite_color, hash) adds a knight to the hash
 def add_knight(name, quest, favorite_color, hash)
+  hash = {
+    :name => name, 
+    :quest => quest, 
+    :favorite_color => favorite_color
+  }
+  # knights are an array...so push a hash into an array??
+  adventure_hash[:knights] << hash
+  adventure_hash # doesn't work without returning this
 end
 
 # returns an array of all quests
 def all_quests(adventure_hash)
-  adventure_hash[:knights].collect do |details|
+  adventure_hash[:knights].collect do |details| # collect *returns* an array, which is what we need. 
     details[:quest]
   end
 end
 
+# returns a hash with knights' names as keys and favorite colors as values"
 def reformat_hash(adventure_hash)
 end
