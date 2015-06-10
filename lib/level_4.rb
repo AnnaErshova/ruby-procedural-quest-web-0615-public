@@ -65,4 +65,12 @@ end
 
 # returns a hash with knights' names as keys and favorite colors as values"
 def reformat_hash(adventure_hash)
+  reformatted_hash = {}
+  adventure_hash[:knights].collect do |knight|
+    reformatted_hash[knight[:name]] = knight[:favorite_color]
+  end
+  reformatted_hash
 end
+
+
+
